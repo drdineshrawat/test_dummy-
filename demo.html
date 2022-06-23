@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function demo() {
+        console.log("testing git repo")
+        //   duplicate count
+        const counts = {};
+        const sampleArray = ["a", "a", "b", "c"];
+        sampleArray.forEach( (x)=> {
+          counts[x] = (counts[x] || 0) + 1;
+        });
+        console.log("duplicate count",counts);
+
+        // remove duplicate 
+        const duplicateValue=sampleArray.filter((item,index)=>{
+          return (sampleArray.indexOf(item)===index)
+        })
+        // const duplicateValue=[...new Set(sampleArray)]
+        console.log("Remove Duplicate",duplicateValue);
+
+        // find only duplicate 
+        const onlyDuplicate=sampleArray.filter((item,index)=>{
+          return (sampleArray.indexOf(item) !== index)
+        })
+        console.log("Only Duplicate",onlyDuplicate);
+      };
+      demo()
+    </script>
+  </body>
+</html>
